@@ -5,14 +5,14 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet("/helloworld.php")
+@WebServlet("/helloworld.html")
 public class HelloWorld extends HttpServlet {
     private String message;
     public int i = 0;
+    private String name=null;
 
     @Override
     public void init() throws ServletException {
-
 
         System.out.println("servlet初始化……");
 
@@ -24,9 +24,10 @@ public class HelloWorld extends HttpServlet {
         resp.setCharacterEncoding("utf-8");
         //        设置响应内容类型
         resp.setContentType("text/html");
+        this.name = req.getParameter("name");
 
-        String username = new String(req.getParameter("name").getBytes("utf-8"),"utf-8");
-        if (username.length()>0){
+        if (null != name) {
+            String username = new String(name.getBytes("utf-8"),"utf-8");
             message = "Hello "+ username +" , Nice To Meet You: " + System.currentTimeMillis();
         } else {
             message = "Hello World , Nice To Meet You: " + System.currentTimeMillis();
