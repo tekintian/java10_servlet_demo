@@ -20,9 +20,19 @@ public class HelloWorld extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        message = "Hello World , Nice To Meet You: " + System.currentTimeMillis();
-//        设置响应内容类型
+
+        resp.setCharacterEncoding("utf-8");
+        //        设置响应内容类型
         resp.setContentType("text/html");
+
+        String username = new String(req.getParameter("name").getBytes("utf-8"),"utf-8");
+        if (username.length()>0){
+            message = "Hello "+ username +" , Nice To Meet You: " + System.currentTimeMillis();
+        } else {
+            message = "Hello World , Nice To Meet You: " + System.currentTimeMillis();
+        }
+
+
 
         PrintWriter out = resp.getWriter();
         out.println("<h1>" + message + "</h1>");
