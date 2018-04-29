@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!--filter 定义-->
     <filter>
         <filter-name>LogFilter</filter-name>
         <filter-class>cn.tekin.java10.demo1.LogFilter</filter-class>
@@ -10,15 +11,36 @@
             <param-name>mysite</param-name>
             <param-value>云南网</param-value>
         </init-param>
+        <init-param>
+            <param-name>site_url</param-name>
+            <param-value>http://localhost:8090/java10_demo1/</param-value>
+        </init-param>
     </filter>
-
+    <!--filter URL映射-->
     <filter-mapping>
         <filter-name>LogFilter</filter-name>
         <url-pattern>*.do</url-pattern>
-        <url-pattern>/readallparams.html</url-pattern>
+        <url-pattern>/hello.html</url-pattern>
     </filter-mapping>
-
-
+     <!--error-code 相关的错误页面 -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errorhandler.html</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/errorhandler.html</location>
+    </error-page>
+    <!--exception-type 相关错误页面-->
+    <!--<error-page>-->
+        <!--<exception-type>javax.servlet.ServletException</exception-type>-->
+        <!--<location>/errorhandler.html</location>-->
+    <!--</error-page>-->
+    <!--<error-page>-->
+        <!--<exception-type>java.io.IOException</exception-type>-->
+        <!--<location>/errorhandler.html</location>-->
+    <!--</error-page>-->
+     <!--servlet 定义 -->
     <servlet>
         <servlet-name>HelloForm</servlet-name>
         <servlet-class>cn.tekin.java10.demo1.HelloForm</servlet-class>
@@ -28,7 +50,7 @@
         <servlet-class>cn.tekin.java10.demo1.CheckBox</servlet-class>
     </servlet>
 
-
+    <!-- servlet URL映射 -->
     <servlet-mapping>
         <servlet-name>HelloForm</servlet-name>
         <url-pattern>/HelloForm.do</url-pattern>
@@ -39,6 +61,7 @@
         <url-pattern>/CheckBox.do</url-pattern>
     </servlet-mapping>
 
+    <!--默认访问文件-->
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>

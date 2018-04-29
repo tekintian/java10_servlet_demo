@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AJAX网络连接检测</title>
+</head>
+<body>
+
+<h1>AJAX网络连接检测</h1>
+
+<button id="check_net">检测网络</button>
+
+<div id="share_plus"></div>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+        //按钮单击时执行
+        $("#check_net").click(function(){
+
+            //Ajax调用处理
+            $.ajax({
+                type: "get",
+                url: "http://localhost:8090/java10_demo1/api/NetStatus",
+                data: "",
+                success: function(res){
+                    $("#share_plus").html('<h2>'+res.desc+'</h2>');
+                }
+            });
+
+        });
+    });
+</script>
+
+</body>
+</html>
+

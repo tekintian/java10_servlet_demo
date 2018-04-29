@@ -37,7 +37,7 @@ public class Refresh extends HttpServlet {
         //格式化输出
         String nowTime = df.format(tasktime);
         PrintWriter out = response.getWriter();
-        String title = "自动刷新 Header 设置 - 菜鸟教程实例";
+        String title = "自动刷新 Header 设置 - 云南JAVA开发教程实例";
         String docType =
                 "<!DOCTYPE html>\n";
         out.println(docType +
