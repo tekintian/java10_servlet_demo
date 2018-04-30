@@ -1,4 +1,4 @@
-package demo2;
+package app.demo1;
 
 public class AppDemo1 {
     public static void main(String[] ARGS) {

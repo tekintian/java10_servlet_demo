@@ -50,6 +50,35 @@
         <servlet-class>cn.tekin.java10.demo1.CheckBox</servlet-class>
     </servlet>
 
+    <!--URL匹配测试servlet-->
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>cn.tekin.java10.demo1.MyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>cn.tekin.java10.demo1.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/a/*</url-pattern>
+        <url-pattern>/hello1.html</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+        <url-pattern>/hello2.html</url-pattern>
+        <url-pattern>/myhello.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/myhello1.html</url-pattern>
+    </servlet-mapping>
+
+    <!--url匹配测试-->
+
     <!-- servlet URL映射 -->
     <servlet-mapping>
         <servlet-name>HelloForm</servlet-name>
