@@ -1,5 +1,7 @@
-# java10_servlet_demo JAVA Servlet 学习项目
-java10 servlet demo  JAVA Servlet 学习项目， 没有技术含量，纯粹的新手学习的项目
+# java10 Servlet 学习项目 Maven Junit
+	java10 servlet demo  JAVA Servlet 学习项目， 没有技术含量，纯粹的新手学习的项目
+	Maven 依赖管理，Junit 单元测试
+
 ## java foreach,  for 循环
 
 ### foreach
